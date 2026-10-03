@@ -19,6 +19,19 @@ cp -r muse-artifact-skill /path/to/your-project/.agents/skills/artifact
 muse skills validate /path/to/your-project/.agents/skills/artifact --json
 ```
 
+## 開発フロー
+
+インストール先(`~/.config/muse/skills/artifact/`)は直接編集しない。
+このリポジトリを作業コピーとして編集する:
+
+```sh
+# 編集後
+muse skills validate . --json
+git commit -m "..." SKILL.md
+git push
+muse skills update artifact
+```
+
 ## 要件
 
 - ホスト用に `python3` を使用
